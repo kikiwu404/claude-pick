@@ -1,0 +1,255 @@
+/* The Kiki Daily — Music Archive
+   Visual language matches the newsletter: cream background, thick black
+   borders, square corners (no border-radius anywhere), chartreuse +
+   lavender accents. */
+
+:root {
+  --bg: #f4efe3;
+  --ink: #121212;
+  --chartreuse: #d7f23c;
+  --lavender: #ada8f5;
+  --purple: #5a4fcf;
+  --muted: #6a6559;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* ---------- Header ---------- */
+
+header.site-header {
+  text-align: center;
+  padding: 30px 0 40px;
+  border-bottom: 3px solid var(--ink);
+  margin-bottom: 40px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--chartreuse);
+  border: 3px solid var(--ink);
+  padding: 10px 24px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transform: rotate(-2deg);
+}
+
+.site-header h1 {
+  font-size: 34px;
+  margin: 22px 0 6px;
+  letter-spacing: 0.5px;
+}
+
+.site-header p.sub {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ---------- Grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border: 3px solid var(--ink);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-wrap {
+  border-bottom: 3px solid var(--ink);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.cover-wrap .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.card .date {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.card .artist {
+  margin: 0;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.card .desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  flex-grow: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-top: 4px;
+}
+
+.tag {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--purple);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tag:hover,
+.tag.is-active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.tag.is-active {
+  background: var(--purple);
+  color: #fff;
+}
+
+.listen-btn {
+  display: block;
+  border-top: 3px solid var(--ink);
+  background: var(--chartreuse);
+  color: var(--ink);
+  text-decoration: none;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 20px;
+}
+
+.listen-btn:hover {
+  background: var(--ink);
+  color: var(--chartreuse);
+}
+
+.card .source {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.card .source a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+/* ---------- Filter bar ---------- */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 3px solid var(--ink);
+  background: var(--lavender);
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+}
+
+.filter-bar[hidden] {
+  display: none;
+}
+
+.filter-clear {
+  border: 2px solid var(--ink);
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.filter-clear:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  font-family: "Courier New", Courier, monospace;
+  padding: 60px 0;
+}
